@@ -1,16 +1,21 @@
 # example-vue-cle
 
-Vue cli によるプロジェクト例。docker-nginxにより公開まで。
+---
+
+VueによるプロジェクトをDocker - nginx を用いて公開
+
++ Vue/Vuetify/Router/Vuex and Docker, nginx
 
 ## start project
 
 ---
 
-package.jsonに書かれているパッケージをインストール
+package.jsonに書かれているパッケージをインストール & 起動
 
 ```bash
 npm install
 
+npm run serve
 ```
 
 ## Docker 
