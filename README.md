@@ -1,39 +1,46 @@
 # example-vue-cle
 
-## Project setup
-```
+Vue cli によるプロジェクト例。docker-nginxにより公開まで。
+
+## start project
+
+---
+
+package.jsonに書かれているパッケージをインストール
+
+```bash
 npm install
+
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+## Docker 
+
+---
+
+コンテナのbuildと実行
+
+```bash
+docker build -t kwashizaki/example-vue-cli:v1.0.0 .
+
+#ファイル指定
+docker build -t kwashizaki/example-vue-cli:v1.0.0 -f ./DockerfileNoBuild .
+
+docker run -it -p 8080:80 --rm --name example-vue-cli kwashizaki/example-vue-cli:v1.0.0
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+Docker Hub へpull
+
+```bash
+docker login
+
+docker push kwashizaki/example-vue-cli:v1.0.0 
+
 ```
 
-### Run your tests
-```
-npm run test
-```
+Docker Hubから取得
 
-### Lints and fixes files
-```
-npm run lint
-```
+```bash
 
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
+docker pull kwashizaki/example-vue-cli:v1.0.0
 
-### Run your unit tests
 ```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
