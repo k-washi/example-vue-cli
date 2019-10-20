@@ -7,7 +7,7 @@ export default new Vuex.Store({
   strict: true,
   state: {
     golang_api: {
-      base_url: "http://localhost:30000/api/ex-golang",
+      base_url: "/api/ex-golang",
     },
     
   },

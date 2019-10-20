@@ -6,7 +6,12 @@ import vuetify from "./plugins/vuetify";
 import axios from 'axios';
 
 Vue.config.productionTip = false;
-Vue.prototype.$axios = axios; 
+Vue.prototype.$axios = axios;
+
+//axios config
+Vue.prototype.$axios.defaults.baseURL = 'http://localhost:30000';
+//Vue.prototype.$axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+Vue.prototype.$axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'; 
 
 
 new Vue({

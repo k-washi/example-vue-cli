@@ -16,6 +16,8 @@ package.jsonに書かれているパッケージをインストール & 起動
 npm install
 
 npm run serve
+
+npm run serve --  --port 80
 ```
 
 ## Docker 
@@ -30,7 +32,7 @@ docker build -t kwashizaki/example-vue-cli:v1.0.0 .
 #ファイル指定
 docker build -t kwashizaki/example-vue-cli:v1.0.0 -f ./DockerfileNoBuild .
 
-docker run -it -p 8080:80 --rm --name example-vue-cli kwashizaki/example-vue-cli:v1.0.0
+docker run -it -p 80:80 --rm --name example-vue-cli kwashizaki/example-vue-cli:v1.0.0
 ```
 
 Docker Hub へpull

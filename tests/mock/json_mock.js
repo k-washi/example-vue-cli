@@ -6,7 +6,7 @@ mocky.createServer([{
     //GET health
     url: basePath + '/health',
     method: 'get',
-    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    headers: {},
     res: {
         status: 200,
         headers: {'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Allow-Origin': 'http://localhost:8080'},
@@ -16,7 +16,7 @@ mocky.createServer([{
 {//GET rest-api
     url: basePath + '/rest-api',
     method: 'get',
-    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    headers: {},
     res: (req, res, callback) => {
         setTimeout(() => {
             callback(null, {

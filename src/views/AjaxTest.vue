@@ -52,16 +52,28 @@ export default {
     },
     getRest() {
         this.get_rest_result = 'golang data 取得中';
+
+        /*
         const params = new URLSearchParams();
         params.append('name', "name")
+        */
+       
+        const data = {
+               name: "name",
+           };
+        /*url?name=name
+        {params: data}
+        */
+        
     
-        this.$axios.get(this.$store.getters.getGoRestUrl, params)
+        this.$axios.get(this.$store.getters.getGoRestUrl, {params: data})
             .then((res) => {
-                
+                console.log(res);
                 this.get_rest_result  = res.data;
                 
             })
             .catch((res) => {
+                console.log(res);
                 this.get_rest_result = "golang rest 失敗";
             })
     },
@@ -69,16 +81,21 @@ export default {
         this.post_rest_result = 'golang post 中';
         this.counter += 1;
 
+        
         let params = new URLSearchParams();
         params.append("name", "name")
         params.append("description", "test")
-        params.append("data", {"id": 1, "name": this.textfield })
-
+        params.append("data", this.textfield)
+        params.append("id", this.counter)
+       
         this.$axios.post(this.$store.getters.getGoRestUrl, params)
             .then((res) => {
+                console.log(res);
                 this.post_rest_result  = res.data;
+                this.textfield = "";
             })
             .catch((res) => {
+                console.log(res);
                 this.post_rest_result = "golang rest 失敗";
             })
     },
