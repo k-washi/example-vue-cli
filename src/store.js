@@ -6,19 +6,31 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   strict: true,
   state: {
-    golang_api: {
-      base_url: "/api/ex-golang",
-    },
-    
+    name: "Anonymous user",
+    email: "",
+    status: false,
   },
   getters: {
-    getGoHealthUrl(state) {
-      return state.golang_api.base_url + "/health"
+    name(state){
+      return state.name
     },
-    getGoRestUrl(state) {
-      return state.golang_api.base_url + "/rest-api"
+    email(state) {
+      return state.email
+    },
+    isSignedIn(state) {
+      return state.status
+    },
+  },
+  mutations: {
+    onAuthNameChanged(state, name) {
+      state.name = name
+    },
+    onAuthEmailChanged(state, email) {
+      state.email = email; //firebase user情報
+    },
+    onUserStatusChanged(state, status) {
+      state.status = status;
     }
   },
-  mutations: {},
   actions: {}
 });

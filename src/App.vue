@@ -1,6 +1,9 @@
 <template>
-  <div id="app">
-    <v-app>
+
+    <v-app id="app">
+      <v-navigation-drawer app>
+        <!-- -->
+      </v-navigation-drawer>
       <v-app-bar app>
         <v-toolbar-title class="headline text-uppercase">
           <span>Vuetify</span>
@@ -16,10 +19,17 @@
         </v-btn>
       </v-app-bar>
       <v-content>
-        <router-view /> 
+              <v-container fluid>
+          <router-view></router-view>
+        
+      </v-container>
       </v-content>
+
+     
+
+    
     </v-app>
-  </div>
+ 
 </template>
 
 <script>
@@ -30,8 +40,14 @@ export default {
   components: {
     //HelloWorld
   },
+  mounted(){
+    this.$vuetify.application.top = 54;
+  }, 
   data: () => ({
     //
   })
 };
 </script>
+
+<style>
+</style>

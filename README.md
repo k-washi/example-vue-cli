@@ -17,7 +17,6 @@ npm install
 
 npm run serve
 
-npm run serve --  --port 80
 ```
 
 ## Docker 
